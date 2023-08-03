@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="col content">
+        <h1>画像分類</h1>
+        <form method="post" enctype="multipart/form-data" action="{% url 'result' %}">
+            {% csrf_token %}
+            <input name="image" type="file">
+            <input type="submit" value="判定">
+        </form>
+    </div>
+</div>
+{% endblock %}

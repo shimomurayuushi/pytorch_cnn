@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="col content">
+        <h1>判定結果</h1>
+        {% if result %}
+            {% autoescape off %}
+                {{ result|safe }}
+            {% endautoescape %}
+            <p><img src="{{ filepath }}"></p>
+        {% endif %}
+        <form method="get" action="{% url 'index' %}">
+            <button class="submit">戻る</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
